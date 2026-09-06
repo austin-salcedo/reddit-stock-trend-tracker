@@ -1,0 +1,1 @@
+print("Hello, Reddit Stock Trend Tracker!")
