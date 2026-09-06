@@ -1,5 +1,3 @@
-EXAMPLE_TICKERS_LIST = ["AAPL", " tsla ", "AAPL", "goog", "TSLA", "aapl"]
-
 
 def count_tickers(tickers: list[str]) -> dict[str, int]:
     """Normalize ticker symbols and count their occurrences."""
