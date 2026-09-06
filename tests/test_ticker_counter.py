@@ -1,4 +1,4 @@
-from main import count_tickers
+from ticker_counter import count_tickers
 
 ###########################################
 ## Test cases for count_tickers function ##
