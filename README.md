@@ -21,6 +21,55 @@ The project will evolve incrementally rather than being designed as a large appl
 
 ---
 
+## Getting Started
+
+### Requirements
+
+* Python 3
+* `pytest` for running the test suite
+
+### Setup
+
+Clone the repository:
+
+```bash
+git clone git@github.com:austin-salcedo/reddit-stock-trend-tracker.git
+cd reddit-stock-trend-tracker
+```
+
+Create a virtual environment:
+
+```bash
+python3 -m venv .venv
+```
+
+Activate it on macOS/Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+Install the development dependency:
+
+```bash
+python -m pip install pytest
+```
+
+Run the application:
+
+```bash
+python main.py
+```
+
+Run the tests:
+
+```bash
+python -m pytest
+```
+
+
+---
+
 ## Goals
 
 ### Primary Goals
