@@ -2,7 +2,7 @@ from file_handler import lines_from
 from pathlib import Path
 import pytest
 
-TEST_TICKERS_FILE = "tests/test_data/test_tickers.txt"
+TEST_TICKERS_FILE = Path("tests/test_data/test_tickers.txt")
 EXPECTED_TICKERS = ['   aapl\n', 'Aapl\n', 'goog\n', ' GOOG\n', 
                     'GooG\n', 'tsLA\n', 'MSFT\n', 'mSft\n', 'nvda\n', 
                     'NVDA   \n', '  NvDa\n', 'amzn\n', 'Amzn\n', 
@@ -22,3 +22,6 @@ def test_lines_from_empty_file(tmp_path):
 def test_lines_from_missing_file():
     with pytest.raises(FileNotFoundError):
         lines_from("non-existent.txt")
+
+def test_lines_from_receives_path():
+    assert isinstance(TEST_TICKERS_FILE, Path)

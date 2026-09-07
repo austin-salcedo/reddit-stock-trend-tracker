@@ -1,7 +1,8 @@
 from ticker_counter import count_tickers
 from file_handler import lines_from
+from pathlib import Path
 
-TEST_TICKERS_FILE = "tests/test_data/test_tickers.txt"
+TEST_TICKERS_FILE = Path("tests/test_data/test_tickers.txt")
 
 def main():
 
