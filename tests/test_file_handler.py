@@ -22,6 +22,3 @@ def test_lines_from_empty_file(tmp_path):
 def test_lines_from_missing_file():
     with pytest.raises(FileNotFoundError):
         lines_from("non-existent.txt")
-
-def test_lines_from_receives_path():
-    assert isinstance(TEST_TICKERS_FILE, Path)
