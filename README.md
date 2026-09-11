@@ -26,7 +26,9 @@ The project will evolve incrementally rather than being designed as a large appl
 ### Requirements
 
 * Python 3
-* `pytest` for running the test suite
+* `pytest`
+* `python-dotenv`
+* [Alpha Vantage](https://www.alphavantage.co/support/#api-key) API key
 
 ### Setup
 
@@ -49,10 +51,10 @@ Activate it on macOS/Linux:
 source .venv/bin/activate
 ```
 
-Install the development dependency:
+Install the development dependencies:
 
 ```bash
-python -m pip install pytest
+python -m pip install pytest python-dotenv
 ```
 
 Run the application:

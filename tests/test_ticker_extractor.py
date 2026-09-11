@@ -88,8 +88,8 @@ def test_extract_with_adjacent_punctuation():
     assert actual2 == expected2
 
 def test_extract_duplicate_mentions():
-    input = "$AAPL looks good, but $AAPL is expensive."
-    expected = ["AAPL", "AAPL"]
-    actual = extract_tickers(input, VALID_TICKERS)
+    input1 = "$AAPL looks good, but $AAPL is expensive."
+    expected1 = ["AAPL", "AAPL"]
+    actual1 = extract_tickers(input1, VALID_TICKERS)
 
-    assert actual == expected
+    assert actual1 == expected1

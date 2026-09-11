@@ -7,3 +7,4 @@ def lines_from(file_path: Path) -> list[str]:
     """
     with open(file_path, "r") as file:
         return [line for line in file]
+    

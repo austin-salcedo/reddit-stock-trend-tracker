@@ -1,4 +1,3 @@
-import pytest
 import csv
 from io import StringIO
 from alpha_vantage import build_query_string, get_url, extract_ticker_symbols
@@ -38,3 +37,4 @@ def test_extract_symbols():
     result = extract_ticker_symbols(reader)
 
     assert result == {"AAPL", "MSFT", "SPY"}
+    
