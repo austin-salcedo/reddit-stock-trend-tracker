@@ -13,14 +13,14 @@ def build_query_string(params: dict[str, str]) -> str:
 def get_url(base_url: str, query_string: str) -> str:
     return f"{base_url}?{query_string}"
 
-def request_to_dict_reader(url: str) -> csv.DictReader:
+def request_csv_text(url: str) -> str:
     with urlopen(url) as response:
-        # Transform: raw bytes -> text -> csv file -> dict
         raw_data = response.read()
-        text_data = raw_data.decode("utf-8")
-        csv_file = StringIO(text_data)
-        dict_data = csv.DictReader(csv_file)
-    return dict_data
+        return raw_data.decode("utf-8")
+
+def text_to_dict_reader(text_data: str) -> csv.DictReader:
+    csv_file = StringIO(text_data)
+    return csv.DictReader(csv_file)
 
 def extract_ticker_symbols(reader: csv.DictReader) -> set[str]:
     symbols: set[str] = set()
@@ -38,6 +38,7 @@ def fetch_valid_tickers() -> set[str]:
     }
     query_string = build_query_string(query_params)
     url = get_url(AV_BASE_URL, query_string)
-    reader = request_to_dict_reader(url)
+    text = request_csv_text(url)
+    reader = text_to_dict_reader(text)
 
     return extract_ticker_symbols(reader)
