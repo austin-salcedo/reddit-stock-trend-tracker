@@ -10,9 +10,6 @@ from datetime import datetime, timedelta
 AV_BASE_URL = "https://www.alphavantage.co/query"
 AV_LISTINGS_CACHE = Path("data/av_listing_status.csv")
 CACHE_TTL_HOURS = 24
-# The last time we fetched and cached an 
-# Alpha Vantage Listings Status csv from their API.
-AV_CACHE_TIME_MARKER_FILE = Path("/data/av_listings_cache_time.txt")
 
 def build_query_string(params: dict[str, str]) -> str:
     return urlencode(params)
